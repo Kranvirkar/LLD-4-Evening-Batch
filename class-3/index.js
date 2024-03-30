@@ -60,6 +60,7 @@ app.get("/api/products", (req, res) => {
 
 app.get("/products", async (req, res) => {
   const allProducts = await ProductModel.find({})
+  // const allProducts = await ProductModel.find({isInStock :true})
   console.log(allProducts)
   const html = `<ul> ${allProducts.map(
     (product) => `<li>${product.product_name} </li>`
